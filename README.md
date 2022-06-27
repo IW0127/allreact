@@ -3,5 +3,5 @@
 show on this blow folder path
 
 allreact
-|--------src
-|--components
+     |--------src
+                |--components
