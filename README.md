@@ -2,6 +2,4 @@
 
 show on this blow folder path
 
-allreact
-|--------src
-|--components
+allreact>>=> src >==>components
