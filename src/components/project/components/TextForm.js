@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import copy from "copy-to-clipboard";
 export default class TextForm extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +33,7 @@ export default class TextForm extends Component {
   handleCopyClick() {
     const text = document.getElementById("myBox");
     text.select();
-    navigator.clipboard.writeText(this.state.text);
+    copy(this.state.text);
   }
   handleOnchange(event) {
     console.log(event);

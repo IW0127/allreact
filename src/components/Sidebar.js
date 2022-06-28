@@ -8,7 +8,7 @@ export default function Sidebar() {
     },
     {
       title: "Home",
-      to: "/home",
+      to: "/",
     },
     {
       title: "Project1",
@@ -46,6 +46,14 @@ export default function Sidebar() {
       to: "/code-splitting",
     },
     {
+      title: "Context",
+      to: "/context",
+    },
+    {
+      title: "Error Boundaries",
+      to: "/error-boundaries",
+    },
+    {
       title: "About",
       to: "/about",
     },
@@ -59,11 +67,18 @@ export default function Sidebar() {
     <div className="p-3 border-end overflow-auto" style={{ height: "92vh" }}>
       <div className="list-group">
         {SidebarLinks.map((nameLink, id) => {
+          const activeSplitPath = window.location.pathname.split("/");
           if (nameLink.to) {
             return (
               <Link
                 className={`list-group-item list-group-item-action 
-              ${nameLink.to === window.location.pathname ? "active" : ""}
+              ${
+                nameLink.to === window.location.pathname
+                  ? "active"
+                  : `/${activeSplitPath[1]}` === nameLink.to
+                  ? "active"
+                  : ""
+              }
                ${nameLink.to === activeSide ? "active" : ""} `}
                 data-id={id}
                 to={nameLink.to}
