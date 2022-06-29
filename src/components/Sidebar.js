@@ -54,6 +54,18 @@ export default function Sidebar() {
       to: "/error-boundaries",
     },
     {
+      title: "Forwarding Refs",
+      to: "/forwarding-refs",
+    },
+    {
+      title: "Fragment",
+      to: "/fragment",
+    },
+    {
+      title: "Portals",
+      to: "/portals",
+    },
+    {
       title: "About",
       to: "/about",
     },

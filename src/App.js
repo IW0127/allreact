@@ -17,7 +17,9 @@ import Composition from "./components/CompositionVsInheritance/Composition";
 import ReactLazy from "./components/CodeSplitting/Reactlazy";
 import Main from "./components/Context/Main";
 import Error from "./components/errorBoundaries/Error";
-
+import ForwardingRefs from "./components/forwardingRefs/ForwardingRefs";
+import Fragments from "./components/Fragments/Fragments";
+import Parent from "./components/portals/Portals";
 function App() {
   return (
     <Router>
@@ -27,44 +29,48 @@ function App() {
           <div className="col-2 h-100">
             <Sidebar />
           </div>
-          <div className="col-10 mainBox">
+          <div className="col-10 mainBox" id="demo1">
             <Routes>
               {/* Navbar */}
-              <Route exact path="/" element={<Hello />}></Route>
-              <Route exact path="/about" element={<About />}></Route>
+              <Route exact path="/" element={<Hello />} />
+              <Route exact path="/about" element={<About />} />
               {/* Sidebar */}
-              <Route exact path="/home" element={<Hello />}></Route>
-              <Route exact path="/" element={<Hello />}></Route>
-              <Route exact path="/" element={<Hello />}></Route>
+              <Route exact path="/home" element={<Hello />} />
+              <Route exact path="/" element={<Hello />} />
+              <Route exact path="/" element={<Hello />} />
 
               {/* Examples */}
 
-              <Route exact path="/project1" element={<Project1 />}></Route>
-              <Route exact path="/jsx" element={<Jsx />}></Route>
-              <Route
-                exact
-                path="/rendering-elements"
-                element={<Rendering />}
-              ></Route>
-              <Route exact path="/form" element={<Form />}></Route>
-              <Route exact path="/Lifting-State-Up" element={<A />}></Route>
+              <Route exact path="/project1" element={<Project1 />} />
+              <Route exact path="/jsx" element={<Jsx />} />
+              <Route exact path="/rendering-elements" element={<Rendering />} />
+              <Route exact path="/form" element={<Form />} />
+              <Route exact path="/Lifting-State-Up" element={<A />} />
               <Route
                 exact
                 path="/Composition-inheritance"
                 element={<Composition />}
-              ></Route>
+              />
+              <Route exact path="/accessibility" element={<Accessibility />} />
+              <Route exact path="/code-splitting" element={<ReactLazy />} />
+              <Route exact path="/context/*" element={<Main />} />
+              <Route exact path="/error-boundaries" element={<Error />} />
               <Route
                 exact
-                path="/accessibility"
-                element={<Accessibility />}
-              ></Route>
+                path="/forwarding-refs"
+                element={<ForwardingRefs />}
+              />
+              <Route exact path="/fragment" element={<Fragments />} />
               <Route
                 exact
-                path="/code-splitting"
-                element={<ReactLazy />}
-              ></Route>
-              <Route exact path="/context/*" element={<Main />}></Route>
-              <Route exact path="/error-boundaries" element={<Error />}></Route>
+                path="/portals"
+                element={
+                  <>
+                    <div id="modal-root"></div>
+                    <Parent />
+                  </>
+                }
+              />
             </Routes>
           </div>
         </div>

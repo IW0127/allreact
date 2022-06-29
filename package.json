@@ -11,8 +11,10 @@
     "react": "^18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
+    "react-portal": "^4.2.2",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^2.1.3",
+    "serve": "^13.0.2",
     "web-vitals": "^2.1.4",
     "yarn": "^1.22.19"
   },
@@ -41,6 +43,10 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "envify": "^4.1.0",
+    "gh-pages": "^4.0.0",
+    "terser": "^5.14.1",
+    "terser-brunch": "^4.1.0",
+    "uglifyify": "^5.0.2"
   }
 }
