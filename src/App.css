@@ -1,24 +1,23 @@
-#sidebar::-webkit-scrollbar {
-    display: none;
-  }
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #878787 #ffffff;
+}
 
-  .mainBox{
-    overflow: auto; 
-    height: 92vh;
-    scrollbar-width: auto;
-    scrollbar-color: #878787 #ffffff;
-  }
+.mainBox {
+  overflow: auto;
+  height: 92vh;
+}
 
-  .mainBox::-webkit-scrollbar {
-    width: 13px;
-  }
+*::-webkit-scrollbar {
+  width: 13px;
+}
 
-  .mainBox::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
 
-  .mainBox::-webkit-scrollbar-thumb {
-    background-color: #878787;
-    border-radius: 21px;
-    border: 3px solid #ffffff;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: #878787;
+  border-radius: 21px;
+  border: 3px solid #ffffff;
+}

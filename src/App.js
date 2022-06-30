@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 // import ReactDOM from "react-dom/client";
 import Hello from "./components/Hello";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -15,11 +15,13 @@ import Accessibility from "./components/accessibility/Accessibility";
 import Project1 from "./components/project/Project1";
 import Composition from "./components/CompositionVsInheritance/Composition";
 import ReactLazy from "./components/CodeSplitting/Reactlazy";
-import Main from "./components/Context/Main";
+// import Main from ("./components/Context/Main");
 import Error from "./components/errorBoundaries/Error";
 import ForwardingRefs from "./components/forwardingRefs/ForwardingRefs";
 import Fragments from "./components/Fragments/Fragments";
-import Parent from "./components/portals/Portals";
+import UseRefFunction from "./components/refsAndTheDOM/UseRef";
+
+const Main = React.lazy(() => import("./components/Context/Main"));
 function App() {
   return (
     <Router>
@@ -35,8 +37,6 @@ function App() {
               <Route exact path="/" element={<Hello />} />
               <Route exact path="/about" element={<About />} />
               {/* Sidebar */}
-              <Route exact path="/home" element={<Hello />} />
-              <Route exact path="/" element={<Hello />} />
               <Route exact path="/" element={<Hello />} />
 
               {/* Examples */}
@@ -53,7 +53,15 @@ function App() {
               />
               <Route exact path="/accessibility" element={<Accessibility />} />
               <Route exact path="/code-splitting" element={<ReactLazy />} />
-              <Route exact path="/context/*" element={<Main />} />
+              <Route
+                exact
+                path="/context/*"
+                element={
+                  <Suspense fallback={<h1>Loading...</h1>}>
+                    <Main />
+                  </Suspense>
+                }
+              />
               <Route exact path="/error-boundaries" element={<Error />} />
               <Route
                 exact
@@ -63,13 +71,8 @@ function App() {
               <Route exact path="/fragment" element={<Fragments />} />
               <Route
                 exact
-                path="/portals"
-                element={
-                  <>
-                    <div id="modal-root"></div>
-                    <Parent />
-                  </>
-                }
+                path="/refs-and-the-DOM"
+                element={<UseRefFunction />}
               />
             </Routes>
           </div>

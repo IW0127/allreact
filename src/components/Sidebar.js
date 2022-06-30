@@ -66,6 +66,10 @@ export default function Sidebar() {
       to: "/portals",
     },
     {
+      title: "Refs and the DOM",
+      to: "/refs-and-the-DOM",
+    },
+    {
       title: "About",
       to: "/about",
     },
