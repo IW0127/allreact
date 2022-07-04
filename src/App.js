@@ -20,6 +20,7 @@ import Error from "./components/errorBoundaries/Error";
 import ForwardingRefs from "./components/forwardingRefs/ForwardingRefs";
 import Fragments from "./components/Fragments/Fragments";
 import UseRefFunction from "./components/refsAndTheDOM/UseRef";
+import StateHooks from "./components/stateHooks/StateHooks";
 
 const Main = React.lazy(() => import("./components/Context/Main"));
 function App() {
@@ -74,6 +75,7 @@ function App() {
                 path="/refs-and-the-DOM"
                 element={<UseRefFunction />}
               />
+              <Route exact path="/stateHooks" element={<StateHooks />} />
             </Routes>
           </div>
         </div>

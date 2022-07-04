@@ -61,13 +61,17 @@ export default function Sidebar() {
       title: "Fragment",
       to: "/fragment",
     },
-    {
-      title: "Portals",
-      to: "/portals",
-    },
+
     {
       title: "Refs and the DOM",
       to: "/refs-and-the-DOM",
+    },
+    {
+      title: "Hooks",
+    },
+    {
+      title: "State Hooks",
+      to: "/state-hook",
     },
     {
       title: "About",
@@ -87,7 +91,7 @@ export default function Sidebar() {
           if (nameLink.to) {
             return (
               <Link
-                className={`list-group-item list-group-item-action 
+                className={`list-group-item list-group-item-action
               ${
                 nameLink.to === window.location.pathname
                   ? "active"
