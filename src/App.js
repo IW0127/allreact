@@ -21,6 +21,8 @@ import ForwardingRefs from "./components/forwardingRefs/ForwardingRefs";
 import Fragments from "./components/Fragments/Fragments";
 import UseRefFunction from "./components/refsAndTheDOM/UseRef";
 import StateHooks from "./components/stateHooks/StateHooks";
+import EffectHook from "./components/effectHooks/EffectHook";
+import UsingCustHook from "./components/customHook/UsingCustHook";
 
 const Main = React.lazy(() => import("./components/Context/Main"));
 function App() {
@@ -75,7 +77,9 @@ function App() {
                 path="/refs-and-the-DOM"
                 element={<UseRefFunction />}
               />
-              <Route exact path="/stateHooks" element={<StateHooks />} />
+              <Route exact path="/state-hook" element={<StateHooks />} />
+              <Route exact path="/effect-hook" element={<EffectHook />} />
+              <Route exact path="/custom-hook" element={<UsingCustHook />} />
             </Routes>
           </div>
         </div>

@@ -74,6 +74,14 @@ export default function Sidebar() {
       to: "/state-hook",
     },
     {
+      title: "Effect Hooks",
+      to: "/effect-hook",
+    },
+    {
+      title: "Custom Hooks",
+      to: "/custom-hook",
+    },
+    {
       title: "About",
       to: "/about",
     },

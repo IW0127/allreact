@@ -5,9 +5,9 @@ class CreateInput extends React.Component {
     super(props);
     this.text = React.createRef();
   }
-  getValue = () => {
+  getValue() {
     console.log("Using ref", this.text.current.value);
-  };
+  }
   render() {
     return (
       <div>
