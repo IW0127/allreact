@@ -4,7 +4,7 @@ export default function Navebar() {
     <nav className="navbar navbar-light bg-light border">
       <div className="container-fluid">
         <a href="/" className="navbar-brand">
-          Navbar
+          All React Examples
         </a>
         <form className="d-flex">
           <input

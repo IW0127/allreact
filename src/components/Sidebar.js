@@ -82,6 +82,10 @@ export default function Sidebar() {
       to: "/custom-hook",
     },
     {
+      title: "UseMemo and UseCallback",
+      to: "/memo-callback",
+    },
+    {
       title: "About",
       to: "/about",
     },

@@ -23,6 +23,7 @@ import UseRefFunction from "./components/refsAndTheDOM/UseRef";
 import StateHooks from "./components/stateHooks/StateHooks";
 import EffectHook from "./components/effectHooks/EffectHook";
 import UsingCustHook from "./components/customHook/UsingCustHook";
+import MemoCallback from "./components/memoAndCallback/MemoCallback";
 
 const Main = React.lazy(() => import("./components/Context/Main"));
 function App() {
@@ -80,6 +81,7 @@ function App() {
               <Route exact path="/state-hook" element={<StateHooks />} />
               <Route exact path="/effect-hook" element={<EffectHook />} />
               <Route exact path="/custom-hook" element={<UsingCustHook />} />
+              <Route exact path="/memo-callback" element={<MemoCallback />} />
             </Routes>
           </div>
         </div>
