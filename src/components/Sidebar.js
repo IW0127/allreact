@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
-export default function Sidebar() {
+function Sidebar() {
   const SidebarLinks = [
     {
       title: "MAIN CONCEPTS",
@@ -86,15 +86,23 @@ export default function Sidebar() {
       to: "/memo-callback",
     },
     {
+      title: "useImperativeHandle",
+      to: "/useImperativeHandle",
+    },
+    {
+      title: "Redux Hooks",
+      to: "/redux",
+    },
+    {
       title: "About",
       to: "/about",
     },
   ];
-  function activeClass(event) {
+  const [activeSide, setActive] = useState(0);
+  const activeClass = (event) => {
     const id = event.target.pathname;
     setActive(id);
-  }
-  const [activeSide, setActive] = useState(0);
+  };
   return (
     <div className="p-3 border-end overflow-auto" style={{ height: "92vh" }}>
       <div className="list-group">
@@ -138,3 +146,5 @@ export default function Sidebar() {
     </div>
   );
 }
+
+export default memo(Sidebar);
