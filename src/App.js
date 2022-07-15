@@ -25,7 +25,9 @@ import EffectHook from "./components/effectHooks/EffectHook";
 import UsingCustHook from "./components/customHook/UsingCustHook";
 import MemoCallback from "./components/memoAndCallback/MemoCallback";
 import Parent from "./components/useImperativeHandle/Parent";
-import ReduxHooks from "./components/redux/ReduxHooks";
+import { Provider } from "react-redux";
+import ReduxHooks from "./components/reduxHooks/ReduxHooks";
+import store from "./components/reduxHooks/store";
 
 const Main = React.lazy(() => import("./components/Context/Main"));
 function App() {
@@ -85,7 +87,15 @@ function App() {
               <Route exact path="/custom-hook" element={<UsingCustHook />} />
               <Route exact path="/memo-callback" element={<MemoCallback />} />
               <Route exact path="/useImperativeHandle" element={<Parent />} />
-              <Route exact path="/redux" element={<ReduxHooks />} />
+              <Route
+                exact
+                path="/redux"
+                element={
+                  <Provider store={store}>
+                    <ReduxHooks />
+                  </Provider>
+                }
+              />
             </Routes>
           </div>
         </div>
