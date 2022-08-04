@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 function EffectHook() {
   const [count, setCount] = useState(0);
@@ -49,10 +49,10 @@ function EffectHook() {
    */
 
   useEffect(() => {
-    window.addEventListener("resize", updateWindowWidth);
-    return () => {
+    window.addEventListener('resize', updateWindowWidth);
+    /* return () => {
       window.removeEventListener("resize", updateWindowWidth);
-    };
+    }; */
   });
 
   return (
